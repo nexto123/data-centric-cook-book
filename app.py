@@ -11,11 +11,16 @@ app.config["MONGO_URI"] = "mongodb://admin:dimension123@ds125574.mlab.com:25574/
 mongo = PyMongo(app)
 
 @app.route('/')
-def index():
+@app.route("/home", methods=['POST','GET'])
+def home():
     recipes = mongo.db.recipes.find()
     return render_template('index.html',recipes=recipes)
 
-
+# this route displays recipes in the database
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('add_recipe.html', 
+    categories = mongo.db.categories.find())
 
 
 if __name__ == '__main__':

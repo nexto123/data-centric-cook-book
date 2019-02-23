@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Barlow|Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" media="screen,projection" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" media="screen,projection" />
+</head>
+<body>
+  <nav class="nav-color nav-bar-color" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="{{url_for('home')}}" class="brand-logo">INGRI</a>
+    
+  <ul class="right hide-on-med-and-down">
+      
+      
+      
+      <li><a href="#">CATEGORIES </a></li>
+    </ul>
+        <!.......side nav...>
+       <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">CATEGORIES</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+{% block content %}
+
+{% endblock %}
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">RE</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students 
+          working on this project like it's our full time job. Any amount would help 
+          support and continue development on this project and is greatly appreciated.</p>
+        </div>
+        <div class="col l3 s12">
+        </div>
+        <div class="col l3 s12">
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="https://github.com/nexto123">nexto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/init.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </body>
+</html>
