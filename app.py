@@ -70,6 +70,13 @@ def edit_recipe(recipe_id):
     categories = mongo.db.categories.find()
     return render_template('edit_recipe.html', new_recipe = new_recipe, 
     categories=categories)
+
+
+#this route displays categories in the database
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+    categories = mongo.db.categories.find())
     
 
 #login page route
