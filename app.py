@@ -72,7 +72,16 @@ def edit_recipe(recipe_id):
     categories=categories)
     
 
-
+#login page route
+@app.route('/login')
+def login_page():
+    return render_template('login_page.html')
+    
+#Logging out of session after use.
+@app.route('/session_loggout')
+def session_logout():
+    session.pop('username', None)
+    return redirect(url_for('home'))    
 
 
 
