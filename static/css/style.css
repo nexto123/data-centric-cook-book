@@ -1,0 +1,214 @@
+
+body{
+    text-rendering: auto;
+    background-color: #fff;
+    font-family: 'lato', sans-serif;
+}
+
+.black{
+    color: red;
+}
+.nav-bar-color {
+    background-color: #1fb7a6fa !important;
+}
+strong{
+    font-weight: bolder;
+}
+
+#index-banner{
+    background-image:linear-gradient(#8080804f,black), url('../img/hero.jpg');
+    background-size: cover; 
+    background-position: center;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.warning{
+    font-size: 400%;
+    color: #00a89a;
+}
+
+.form-container{
+    width: auto;
+    max-width: 700px;
+    margin-bottom: 400px;
+}
+
+.nav-color{
+    color: red;
+}
+
+.alert-danger{
+    color: red;
+}
+.prev{
+    margin-right: 20px;
+}
+.cat-page{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.79)), url('https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.login-text{
+    color: #2196f3;
+}
+.home{
+    color: red;
+    font-size: 90px;
+    margin: auto 0;
+}
+.home-text{
+    position: relative;
+    top: 45px;
+    left: 68px;
+}
+.add_recipe{
+  color: #009688;
+   font-size: 90px;  
+}
+.add_box{
+   color: #009688;
+   font-size: 90px;
+    margin: auto 0;
+    margin-left: 25px;
+}
+.add-text{
+    position: relative;
+    top: 50px;
+    left: 125px;
+}
+.delete{
+   color: red;
+   font-size: 30px;
+}
+.likes{
+    color: #d4d4d4;
+}
+
+.close-cat{
+    color: white;
+}
+.close-cat:hover{
+    color: red;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.front-card-image{
+    height: 150px;
+}
+.card-box{
+    height: 350px;
+}
+.card-content{
+    overflow: hidden;
+}
+.close:hover{
+        color: red;
+    }
+.edit-button{
+     position: relative;
+     top: 30px;
+     margin-left: 15px;
+     
+    }
+.delete-button{
+     position: relative;
+     top: 30px;
+     margin-right: 15px;
+    }    
+/*--------pagination----*/
+
+.pagination-page-info {
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    background: #1fb7a6;
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+}
+    
+/*---media queries --*/
+@media(max-width: 768px) {
+.card-title {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 100;
+    }
+}
+
+@media(max-width: 672px) {
+.card-title {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 100;
+    }
+}
+
+@media(max-width: 599px) {
+.cat-page{
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+    width: 100%;
+    background-attachment: fixed;
+    }
+.add-text{
+   display: none;
+    }
+.home-text{
+    display: none;
+    }
+.front-card-image{
+    height: 150px;
+    }
+.edit-button{
+     position: relative;
+     top: 20px;
+    }
+.delete-button{
+     position: relative;
+     top: 20px;
+    }
+.cade {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    font-size: 12px;
+    font-weight: 300;
+    }
+}
+
+@media(max-width: 375px){
+.cat-page{
+    background-color: grey;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    }
+}

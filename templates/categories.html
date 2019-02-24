@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/css?family=Barlow|Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" type="text/css" media="screen,projection" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" media="screen,projection" />
+</head>
+<body>
+ <div  class="cat-page">
+   <div class="container center">
+    <a href="{{url_for('home')}}"><span class="home-text">HOME</span><i class="material-icons home waves-effect waves-light">home</i></a>
+     <a href="{{url_for('add_category')}}"><span class="add-text">ADD CATEGORY</span><i class="material-icons add_box waves-effect waves-light">add_box</i></a>
+</div>
+<br>
+<br>
+<div class="container">
+<div class="row center">
+{% for cat in categories %} 
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image">
+          <a href="{{url_for('list_recipes',category_name=cat.category_name)}}"><img src="https://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/2017/01/main/farro-breakfast-bowl.jpg?itok=GjerRz3U"></a>
+          <span class="card-title" style=" background:grey; ">{{ cat.category_name }}</span>
+          <a href="{{url_for('delete_categories',category_id=cat._id)}}"><span class="card-icon right center"><i class="material-icons close-cat">close</i></span></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+ </div>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{url_for('static', filename='js/materialize.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/init.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" 
+  integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </body>
+</html>
