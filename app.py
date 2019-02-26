@@ -72,11 +72,55 @@ def edit_recipe(recipe_id):
     categories=categories)
 
 
+# this routes updates the recipes from the edit route
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'category_name':request.form['category_name'],
+        'recipe_author':request.form['recipe_author'],
+        'recipe_name':request.form['recipe_name'],
+        'recipe_ingredients': request.form['recipe_ingredients'],
+        'photo_url': request.form['photo_url'],
+        'country_of_origin': request.form['country_of_origin']
+    })
+    return redirect(url_for('home'))
+    
+    
+
+# this route deletes the recipe     
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('home'))  
+        
+    
+
+
 #this route displays categories in the database
 @app.route('/get_categories')
 def get_categories():
     return render_template('categories.html',
     categories = mongo.db.categories.find())
+    
+    
+#this routes deletes categories
+@app.route('/delete_categories/<category_id>')
+def delete_categories(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('get_categories'))   
+    
+    
+    
+    
+# search route for categories
+@app.route('/list_recipes/<category_name>')
+def list_recipes(category_name):
+    #search by category_name parsed from the string query 
+    recipes = mongo.db.recipes.find({"category_name":category_name})
+    return render_template('list_recipes.html', recipes=recipes)   
+    
     
 
 #login page route
@@ -84,12 +128,12 @@ def get_categories():
 def login_page():
     return render_template('login_page.html')
     
+
 #Logging out of session after use.
 @app.route('/session_loggout')
 def session_logout():
     session.pop('username', None)
     return redirect(url_for('home'))    
-
 
 
 
