@@ -50,7 +50,7 @@
              <div class="card-image front-card-image waves-effect waves-block waves-light">
               <img class="activator" src="{{recipe.photo_url}}">
                 </div>
-                <a href="{{ url_for('likes', value=1) }}" class="floating right"><i class="material-icons likes">favorite</i></a>
+                <a href="{{ url_for('likes', recipe_id=recipe._id) }}" class="floating right"><i class="material-icons likes">favorite</i></a><span class="right">{{recipe.likes}}</span>
              <div class="card-content">
              <p><strong>Author:  </strong><em>{{ recipe.recipe_author }}</em></p>
              <p><strong>Recipe Name:  </strong> <em>{{ recipe.recipe_name }}</em></p>
@@ -83,3 +83,4 @@
      <br><br>
         </div>
 {% endblock %}
+
