@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+<div class="container form-container">
+<h1 class="header center orange-text">Edit Your Recipe</h1>
+<div class="container from-container">
+<form action="{{ url_for('update_recipe', recipe_id=new_recipe._id)}}" method="POST">    
+
+     <div class="row">
+       <div class="input-field col s12">
+         <i class="material-icons prefix">poll</i>
+        <select id="category" name="category_name">
+          <option value="" disabled selected>Choose Category</option>
+          {%  for cat in categories %}
+              {% if cat.category_name == new_recipe.category_name %}
+                  <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+              {% else %}
+                  <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+              {% endif %}
+          {% endfor %}
+    </select>
+    </div>
+
+   <div class="row">
+       <div class="input-field col s12">
+          <input id="email" type="text" class="validate" name="recipe_author" value="{{ new_recipe.recipe_author}}">
+          <label for="email">recipe author</label>
+            </div>
+             <div class="input-field col s12">
+               <input id="email" type="text" class="validate" name="recipe_name" value="{{ new_recipe.recipe_name }}">
+              <label for="email">recipe name</label>
+             </div>
+           <div class="input-field col s12">
+         <input id="textarea1" class="materialize-textarea" name="recipe_ingredients" type="text" value="{{ new_recipe.recipe_ingredients }}">
+         <label for="textarea1">recipe ingredients</label>
+        </div>
+      </div>
+      <div class="input-field col s12">
+         <input id="textarea3" class="materialize-textarea" type="text" name="country_of_origin" value="{{ new_recipe.country_of_origin }}">
+         <label for="textarea2">Enter country of origin</label>
+        </div>
+        
+     <inputclass="materialize-textarea" id="textarea6" type="hidden" name="likes" value="{{likes}}">
+
+        
+      <div class="input-field col s12">
+         <input id="textarea2" class="materialize-textarea" type="text" name="photo_url" value="{{ new_recipe.photo_url }}">
+         <label for="textarea2">url or link to image</label>
+        </div>
+   <div class="row">
+       <div class="center">
+        <a class="waves-effect waves-light btn-large grey" href="{{url_for('home')}}" style="margin-right: 10px;">Cancel
+     <i class="material-icons right" >cancel</i></a>   
+           
+      <button class="btn-large waves-effect waves-light" type="submit">Submit
+     <i class="material-icons right">send</i>
+    </button>
+    </div>
+   </div>
+  </div>  
+ </form> 
+</div>
+</div>
+{% endblock %}
