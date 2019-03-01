@@ -88,13 +88,16 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     new_recipe = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
+    page = request.args.get(get_page_args, type=int, default=1)
     return render_template('edit_recipe.html', new_recipe = new_recipe, 
-    categories=categories)
+    categories=categories, page=page)
     
     
 # this routes updates the recipes from the edit route
 @app.route('/update_recipe/<recipe_id>', methods=['POST','GET'])
 def update_recipe(recipe_id):
+    page = request.form.get('page')
+    page, per_page,offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
     recipes = mongo.db.recipes
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
@@ -104,9 +107,9 @@ def update_recipe(recipe_id):
         'recipe_ingredients': request.form['recipe_ingredients'],
         'photo_url': request.form['photo_url'],
         'country_of_origin': request.form['country_of_origin'],
-        'likes': request.form['likes']
+        'likes': int(request.form['likes'])
     })
-    return redirect(url_for('home'))
+    return redirect('/home?page={}'.format(page))
     
     
     

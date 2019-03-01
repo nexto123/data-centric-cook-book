@@ -2,6 +2,7 @@
 {% block content %}
  
 <div class="container form-container">
+    
 <h1 class="header center orange-text">Edit Your Recipe</h1>
 <div class="container from-container">
 <form action="{{ url_for('update_recipe', recipe_id=new_recipe._id)}}" method="POST">    
@@ -40,9 +41,10 @@
          <label for="textarea2">Enter country of origin</label>
         </div>
         
-     <input class="materialize-textarea" id="textarea6" type="hidden" name="likes" value="{{new_recipe.likes}}">
+     <input class="materialize-textarea" id="textarea6" type="hidden" name="likes" value="{{new_recipe.likes|int}}">
+     
+     <input class="materialize-textarea" id="textarea6" type="hidden" name="page" value="{{page}}">
 
-        
       <div class="input-field col s12">
          <input id="textarea2" class="materialize-textarea" type="text" name="photo_url" value="{{ new_recipe.photo_url }}">
          <label for="textarea2">url or link to image</label>
