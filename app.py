@@ -48,22 +48,23 @@ def home():
  
     pagination = Pagination( page=page, per_page=per_page,total=recipes.count(), search=search, record_name='recipes',offset=offset)
     #pagination is parsed into the template to be displayed
-    return render_template('index.html', recipes = recipes, pagination = pagination)
+    return render_template('index.html', recipes = recipes, pagination = pagination, page=page)
 
     
-@app.route('/likes/<recipe_id>')
-def likes(recipe_id):
+@app.route('/likes/<page>/<recipe_id>')
+def likes(recipe_id, page):
     new_recipe = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
     figure = int(new_recipe['likes'])
     like_recipe = mongo.db.recipes
+    #this will increase the value of like when clicked
     like_recipe.update({"_id":ObjectId(recipe_id)},
         {"$inc":
             {
             "likes": 1
              }
         },upsert=False, multi=False)
-        
-    return redirect(url_for('home'))
+        #page number is bn parsed into the url as a variable 
+    return redirect('/home?page={}'.format(page))
 
 
 # this route displays recipes in the database
@@ -92,7 +93,7 @@ def edit_recipe(recipe_id):
     
     
 # this routes updates the recipes from the edit route
-@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+@app.route('/update_recipe/<recipe_id>', methods=['POST','GET'])
 def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     recipes.update( {'_id': ObjectId(recipe_id)},
@@ -102,9 +103,12 @@ def update_recipe(recipe_id):
         'recipe_name':request.form['recipe_name'],
         'recipe_ingredients': request.form['recipe_ingredients'],
         'photo_url': request.form['photo_url'],
-        'country_of_origin': request.form['country_of_origin']
+        'country_of_origin': request.form['country_of_origin'],
+        'likes': request.form['likes']
     })
     return redirect(url_for('home'))
+    
+    
     
 # this route deletes the recipe     
 @app.route('/delete_recipe/<recipe_id>')
