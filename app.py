@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template ,redirect, request, url_for, flash,session, Blueprint
+from flask import Flask, render_template ,redirect, request, url_for, flash, session, Blueprint
 from flask_paginate import Pagination, get_page_args, current_app
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
