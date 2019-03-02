@@ -21,10 +21,6 @@ mongo = PyMongo(app)
 mod = Blueprint('recipes', __name__)
 
 
-def redirect_url(default='index'):
-    return request.referrer
-
-
 @app.route('/')
 @app.route("/home", methods=['POST','GET'])
 def home():
