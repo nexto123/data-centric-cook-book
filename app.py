@@ -21,6 +21,10 @@ mongo = PyMongo(app)
 mod = Blueprint('recipes', __name__)
 
 
+def redirect_url(default='index'):
+    return request.referrer
+
+
 @app.route('/')
 @app.route("/home", methods=['POST','GET'])
 def home():
@@ -84,11 +88,10 @@ def insert_recipe():
     
     
 # this route edits recipes and is sent to the update route    
-@app.route('/edit_recipe/<recipe_id>')
-def edit_recipe(recipe_id):
+@app.route('/edit_recipe/<recipe_id>/<page>')
+def edit_recipe(page, recipe_id):
     new_recipe = mongo.db.recipes.find_one({"_id":ObjectId(recipe_id)})
     categories = mongo.db.categories.find()
-    page = request.args.get(get_page_args, type=int, default=1)
     return render_template('edit_recipe.html', new_recipe = new_recipe, 
     categories=categories, page=page)
     
@@ -97,7 +100,7 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=['POST','GET'])
 def update_recipe(recipe_id):
     page = request.form.get('page')
-    page, per_page,offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
+    print(page)
     recipes = mongo.db.recipes
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
