@@ -78,8 +78,18 @@ def add_recipe():
 # accepts requests from add recipe page and inserts recipes into db
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
+    recipe_author= request.form['recipe_author']
+    recipe_name =request.form['recipe_name']
+    country_of_origin= request.form['country_of_origin']
+    recipe_ingredients= request.form['recipe_ingredients']
+    likes= int(request.form['likes'])
+    photo_url= request.form['photo_url']
     recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
+    recipes.insert_one({'recipe_author':recipe_author, 
+    'recipe_name':recipe_name, 
+    'recipe_ingredients':recipe_ingredients,
+    'country_of_origin':country_of_origin, 
+    'likes':likes})
     return redirect(url_for('home'))
     
     

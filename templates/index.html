@@ -18,7 +18,6 @@
       <div class="row center">
         <a href="{{ url_for("add_recipe") }}" id="download-button" class="waves-effect waves-light">
             <i class="material-icons add_recipe waves-effect waves-light">add_box</i></a>
-            
      </div>
       <div class="center">
        <span style="font-size: 100%; color: white;">ADD RECIPE</span>
@@ -55,7 +54,8 @@
              <div class="card-image front-card-image waves-effect waves-block waves-light">
               <img class="activator" src="{{recipe.photo_url}}">
                 </div>
-                <a href="{{ url_for('likes', page=page,recipe_id=recipe._id) }}" class="floating right"><i class="material-icons likes">favorite</i></a><span class="right">{{recipe.likes}}</span>
+                <a href="{{ url_for('likes', page=page,recipe_id=recipe._id) }}" 
+                class="floating right"><i class="material-icons likes">favorite_border</i></a><span class="right">{{recipe.likes}}</span>
              <div class="card-content">
              <p><strong>Author:  </strong><em>{{ recipe.recipe_author }}</em></p>
              <p><strong>Recipe Name:  </strong> <em>{{ recipe.recipe_name }}</em></p>

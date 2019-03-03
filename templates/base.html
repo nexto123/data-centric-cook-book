@@ -20,14 +20,19 @@
     {%  if session.username == session.None %}
       <li><a href="{{ url_for('login_page')}}" waves-effect waves-light btn-small>LOGIN</a></li>
     {% else %}
-    <a class="right" href="{{url_for('session_logout')}}">LOGOUT</a>
+    <a class="right" href="{{url_for('session_logout')}}">LOG OUT</a>
     {% endif%}
         <li><a href="{{ url_for('get_categories')}}">CATEGORIES </a></li>
     </ul>
         <!.......side nav...>
        <ul id="nav-mobile" class="sidenav">
-        <li><a href="{{ url_for('get_categories')}}">CATEGORIES</a></li>
-      </ul>
+        {%  if session.username == session.None %}
+      <li><a href="{{ url_for('login_page')}}" waves-effect waves-light btn-small>LOGIN</a></li>
+    {% else %}
+    <a class="right" href="{{url_for('session_logout')}}">LOGOUT</a>
+    {% endif%}
+        <li><a href="{{ url_for('get_categories')}}">CATEGORIES </a></li>
+    </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -39,9 +44,11 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">RE</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students 
-          working on this project like it's our full time job. Any amount would help 
-          support and continue development on this project and is greatly appreciated.</p>
+          <p class="grey-text text-lighten-4">This is a Code Institute Project.
+          The data-centric cook book project should demonstrate ones comfortability interacting with a database.
+          The ingrido project is simply the placement of stored data which is showcased in cards by the use of pymongo.
+          So sign in and enjoy!!
+          </p>
         </div>
         <div class="col l3 s12">
         </div>
@@ -51,7 +58,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="https://github.com/nexto123">nexto</a>
+      Made by nexto|Ernest Bruce-Brown|<a class="orange-text text-lighten-3" href="https://github.com/nexto123">GitHub Projects</a>
       </div>
     </div>
   </footer>
