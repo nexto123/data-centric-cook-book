@@ -16,7 +16,12 @@
     {% endif%}
       </div>
       <div class="row center">
-        <a href="{{ url_for("add_recipe") }}" id="download-button" class="waves-effect waves-light"><i class="material-icons add_recipe waves-effect waves-light">add_box</i></a>
+        <a href="{{ url_for("add_recipe") }}" id="download-button" class="waves-effect waves-light">
+            <i class="material-icons add_recipe waves-effect waves-light">add_box</i></a>
+            
+     </div>
+      <div class="center">
+       <span style="font-size: 100%; color: white;">ADD RECIPE</span>
       </div>
      <br><br>
     </div>
@@ -30,7 +35,7 @@
                 </div>
                 {% else %}
                 <div class="messages alert center alert-success" role="alert">
-             {{ message }}
+             <p>{{ message }}</p>
             </div>
            {% endif %} 
          {% endfor %}
@@ -38,7 +43,7 @@
 </section> 
 <div class="pagination center">
     <p>{{ pagination.info }}</p>
-    <p >{{ pagination.links }}</p>
+    <p>{{ pagination.links }}</p>
 </div> 
 <div class="container">
     <div class="section">
@@ -56,13 +61,14 @@
              <p><strong>Recipe Name:  </strong> <em>{{ recipe.recipe_name }}</em></p>
              <p><strong>Originated:  </strong> <em>{{ recipe.country_of_origin }}</em></p>
              </div>
+             <!--A simple templating to give users crude access only when they are logged in. -->
           {% if session.username == session.None %}
            <a href="{{url_for('edit_recipe', page=page, recipe_id=recipe._id)}}" class="waves-effect waves-light btn-small blue lighten-2 edit-button" disabled >Edit</a>
-           <a  href="{{url_for('delete_recipe',recipe_id=recipe._id)}}" class="btn-floating waves-effect waves-light right lighten-2  disabled delete-button"><i class="material-icons delete ">delete</i></a>
+           <a  href="{{url_for('delete_recipe', page=page, recipe_id=recipe._id)}}" class="btn-floating waves-effect waves-light right lighten-2  disabled delete-button"><i class="material-icons delete ">delete</i></a>
            
     {% else %}
           <a href="{{url_for('edit_recipe', page=page, recipe_id=recipe._id)}}" class="waves-effect waves-light btn-small  edit-button" style="background-color: #009688;">Edit</a>
-          <a href="{{url_for('delete_recipe',recipe_id=recipe._id)}}" class="waves-effect waves-light right lighten-2 delete-button"><i class="material-icons delete">delete</i></a>
+          <a href="{{url_for('delete_recipe', page=page, recipe_id=recipe._id)}}" class="waves-effect waves-light right lighten-2 delete-button"><i class="material-icons delete">delete</i></a>
       {% endif%}
          <div class="card-reveal">
        <span class="card-title grey-text text-darken-4 ingredient-text"><i class="material-icons right close">close</i></span>
