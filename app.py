@@ -113,10 +113,10 @@ def update_recipe(recipe_id):
     
     
 # this route deletes the recipe     
-@app.route('/delete_recipe/<recipe_id>')
-def delete_recipe(recipe_id):
+@app.route('/delete_recipe/<page>/<recipe_id>')
+def delete_recipe(page, recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
-    return redirect(url_for('home'))  
+    return redirect('/home?page={}'.format(page))  
         
 # category page
 @app.route('/add_categories')
