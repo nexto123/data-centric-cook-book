@@ -42,9 +42,21 @@ strong{
     color: red;
 }
 
-.alert-danger{
-    color: red;
+.alert-success {
+    color: white;
+    background-color: #00bca8b5;
+    max-width: 300px;
+    padding: 20px;
+    font-size: 18px;
 }
+.alert-danger {
+    color: white;
+    background-color: red;
+    max-width: 300px;
+    padding: 20px;
+    font-size: 18px;
+}
+
 .prev{
     margin-right: 20px;
 }
@@ -83,6 +95,7 @@ strong{
     top: 50px;
     left: 125px;
 }
+
 .delete{
    color: red;
    font-size: 30px;
@@ -107,9 +120,7 @@ a {
 }
 .card-box{
     height: 350px;
-}
-.card-content{
-    overflow: hidden;
+
 }
 .close:hover{
         color: red;
