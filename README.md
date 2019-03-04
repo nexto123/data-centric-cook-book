@@ -3,11 +3,11 @@
 A Code Institute Project. Data-Centric.
 
 ## Getting Started
-To get started lets make some preps. You'd need to have a basic understanding of the flask framework and and atleast a grasp on some frontend technologies. Besides the usual css and html, it would be handy to know a bit of bootstrap or materialise.css. In our case we will be using materialise.css. 
+To get started lets make some preps. You'd need to have a basic understanding of the flask framework and and atleast a grasp on some frontend technologies. Besides the usual css and html, it would be handy to know a bit of bootstrap or materialise.css. In our case we will be using materialise.css for the front-end. 
 
- Since the Question specified an online cook-book it's imperative we stay as close as we can within the scope of what has been prescribed. For the design i'm going to be using grids of 3squares per row, with a total of 6 items per page. The materialise cards can do a good job with that. The cards will have 3 sections; being 1. the card-imge, 2. card-title, and 3.crud-section.
- The card-iamge has 2 sections, on the flipped otherside is where i'll put my recipe ingredients. So if a user should click on the image of a card it flips and the ingredients will be diplayed. The card title,  is where some details like recipe author, country of origin of the recipe, and recipe name entries will placed.  
- And finally the crud section. This section will basically contain some crud buttons. Examples are the edit and delete buttons.
+ Since the Question specified an online cook-book, it's imperative we stay as close as we can within the scope of what has been prescribed, atleast in design. For the design i'm going to be using grids of 3squares per row, with a total of 6 squares per page. The materialise cards can do a good job with that. The cards will have 3 sections; being 1. the card-imge, 2. card-title, and 3.crud-section.
+ The card-iamge has 2 sections, the actual image which will bear the recipe image and on the flipped side where i'll put my recipe ingredients. So if a user should click on the image of a card it will flip and the ingredients will be diplayed. The card title,  is where some details like recipe author, country of origin of the recipe, and name of recipe entries will placed.  
+ And finally the crud section. This section will basically contain some crud buttons. Examples are the edit and delete buttons, which when clicked will send the user to the appropriate page or take the required action.
  
  
  
@@ -57,7 +57,9 @@ After setup, mongodb will generate a link for you, and this link will go into yo
 ```
 mongodb://<dbuser>:<dbpassword>@ds163103.mlab.com:63103/mytestdb
 ```
+Now you will place your link inside the flask app.py.
 Voila! Your database is ready.
+
 
 
 
