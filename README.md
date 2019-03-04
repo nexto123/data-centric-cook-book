@@ -61,6 +61,14 @@ Now you will place your link inside the flask app.py.
 Voila! Your database is ready.
 
 
+## Testing
+
+Usually python apps are required to use test automation, and the python unittest libraries can be employed for the job.
+But at this time all test were done manually. This isn't very efficient, but my experience with unittests isn't sufficient. 
+In my code i leave comments and remarks to explain as best to any reeader to understand my motive for which ever code i've written.
+
+
+
 ## Deployment To Git & Heroku
 
 After committing to git with the appropriate messages, 
@@ -83,6 +91,10 @@ These are critical neccesities if you are deploying to heroku.
 * ``` git push heroku master ```
 
 #### [Live Version](https://ingrido.herokuapp.com/)
+
+#### Web App Site Map:
+
+1. Home page > Log in to have crude access.
 
 
 ## Versioning
