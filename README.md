@@ -36,7 +36,7 @@ To connect the css files flask has a twist from the ussual, it follows this stru
 
 [Flask-Paginate](https://pythonhosted.org/Flask-paginate/)- Pagination, get_page_args, current_app
 
-[Pymomgo](https://api.mongodb.com/python/current/)
+[Pymomgo](https://api.mongodb.com/python/current/)- PyMongo, pymongo
 
 
 ## Database setup
