@@ -13,7 +13,9 @@ To get started lets make some preps. You'd need to have a basic understanding of
  
 ## Prerequisites
 
-I'll ussually start by setting up the environment for my flask app by entering in my cli tool ''' $ [sudo]pip install virtualenv ''' .
+I'll ussually start by setting up the environment for my flask app by entering in my cli tool ''' 
+$ [sudo]pip install virtualenv 
+''' .
 Within the <head> tag place your title and various <links> to connect to your HTML. The bootstrap4 CSS cdn to be used will be placed in the head tags as well. It's important to place the script tags at the bottom of the page but right before the closing body tags.
  
 
