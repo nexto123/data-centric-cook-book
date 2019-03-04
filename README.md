@@ -77,12 +77,32 @@ Heroku is a cloud platform that lets you build, deliver, monitor and scale apps.
 To deploy to heroku, there are two critical steps to perform even before your final commit message.
 We have the Procfile and the requirement.txt files. 
 These are critical neccesities if you are deploying to heroku.
-* heroku login- if u've created an account, u'll need to provide the email.
-* heroku git:clone -a cook-book123
-* cd cook-book123
-* git push heroku master
+* ```heroku login ```- if u've created an account, u'll need to provide the email.
+* ```heroku git:clone -a cook-book123 ```
+* ``` cd cook-book123 ```
+* ``` git push heroku master ```
 
 #### [Live Version](https://ingrido.herokuapp.com/)
+
+
+## Versioning
+
+ Git
+
+
+## Author
+
+Ernest Bruce Brown
+
+
+## Media
+
+* Google Images
+
+
+## Acknowledgments
+
+* Chris. Z
 
 
 
