@@ -61,22 +61,35 @@ Now you will place your link inside the flask app.py.
 Voila! Your database is ready.
 
 
+## Deployment To Git & Heroku
+
+After committing to git with the appropriate messages, 
+I'll now perform a git push to my GitHub Repo.
+To create a new repository;
+* first assign a repository name on github since thats what i'm using.
+* write a short description of the site to be uploaded.
+* You will either select to initialize your repository with a README.md file. (optional)
+* create your repository.
+* You will perform a git remote login
+* And finally, git push -u origin master.
+
+Heroku is a cloud platform that lets you build, deliver, monitor and scale apps.
+To deploy to heroku, there are two critical steps to perform even before your final commit message.
+We have the Procfile and the requirement.txt files. 
+These are critical neccesities if you are deploying to heroku.
+* heroku login- if u've created an account, u'll need to provide the email.
+* heroku git:clone -a cook-book123
+* cd cook-book123
+* git push heroku master
+
+#### [Live Version](https://ingrido.herokuapp.com/)
+
+
 
 
 
 
  
-
-
-
-
-
-
-
-
-
-
-
  
 
 
