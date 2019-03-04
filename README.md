@@ -42,7 +42,7 @@ To connect the css files flask has a twist from the ussual, it follows this stru
 ## Database setup
 
 For my database am using Mongodb looped by the flask extension called Pymongo.
-The database is hosted by mongodb's Mlab. 
+The database is hosted by mongodb's [Mlab](mlab.com). 
 Mongo db is a very popular database, classified as a non relation database. 
 It is basically an unstructured database, in common terms one can say it dumps the data without much stiffness.
 To setup a database on mlab, it will require registration 
@@ -64,8 +64,9 @@ Voila! Your database is ready.
 ## Testing
 
 Usually python apps are required to use test automation, and the python unittest libraries can be employed for the job.
-But at this time all test were done manually. This isn't very efficient, but my experience with unittests isn't sufficient. 
-In my code i leave comments and remarks to explain as best to any reeader to understand my motive for which ever code i've written.
+But at this time all test were done manually. This isn't very efficient, but my experience with unittests isn't sufficient at this time and this is a time bound project. 
+In my code i leave comments and remarks to explain as best to any reader to help understand my motive for which ever code i've written. ## CRUD is a very common term used in databases, which stands for create, read, update & delete. After several tests all crud functions are working as they should. flask worked well, flask paginate worked very well too. Now, flask paginate is the extension responsible for the pagination on the pages. It's usage was a bit tricky, but once you understand how it works, it becomes very usefull. Another tricky bit is when writing string queries, if there are styles that would work within python file they won't neccessarily work within the JInja templates. I'll be leaving bits of info's within my templates to explain some templating.
+At this point, the app works well on these screens, the iphone6/6+/7/7+/8/8+,Galaxy s5 and desktops. 
 
 
 
@@ -92,9 +93,15 @@ These are critical neccesities if you are deploying to heroku.
 
 #### [Live Version](https://ingrido.herokuapp.com/)
 
-#### Web App Site Map:
+#### Site Map:
 
-1. Home page > Log in to have crude access.
+1. Home page > Log in to activate crud functionality on the cards.
+* Add a recipe by clicking on the big '+' sign.
+* click on the image to have access to ingredients.
+2. Category page > You can add and delete categories
+* Click on a meal type to sort out the number of meals in the database.
+
+
 
 
 ## Versioning
@@ -118,21 +125,3 @@ Ernest Bruce Brown
 
 
 
-
-
-
- 
- 
-
-
-i used the page variable from flask paginate to redirect urls back to the pages they came from. 
-
-to create my like button i utilized the $inc pymongo trick to get my counts and left as is.
-to not over complicate my project i will stick to my increment feature only. 
-
-To have access to crude activity users will have to add a user name to login. The edit and delete buttons will be deactivated 
-
-
-
-since the scope of the project laid very little emphasies on front-end i have 
-limited my screen tests to iphone6/6+/7/7+/8/8+,Galaxy s5 and desktops.
