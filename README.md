@@ -32,7 +32,9 @@ To connect the css files flask has a twist from the ussual, it follows this stru
 ## Used Extensions for App
 
 [Flask](http://flask.pocoo.org/) - render_template ,redirect, request, url_for, flash, session, Blueprint
+
 [Flask-Paginate](https://pythonhosted.org/Flask-paginate/)- Pagination, get_page_args, current_app
+
 [Pymomgo](https://api.mongodb.com/python/current/)
 
 
