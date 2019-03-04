@@ -65,7 +65,7 @@ Voila! Your database is ready.
 
 Usually python apps are required to use test automation, and the python unittest libraries can be employed for the job.
 But at this time all test were done manually. This isn't very efficient, but my experience with unittests isn't sufficient at this time and this is a time bound project. 
-In my code i leave comments and remarks to explain as best to any reader to help understand my motive for which ever code i've written. ## CRUD is a very common term used in databases, which stands for create, read, update & delete. After several tests all crud functions are working as they should. flask worked well, flask paginate worked very well too. Now, flask paginate is the extension responsible for the pagination on the pages. It's usage was a bit tricky, but once you understand how it works, it becomes very usefull. Another tricky bit is when writing string queries, if there are styles that would work within python file they won't neccessarily work within the JInja templates. I'll be leaving bits of info's within my templates to explain some templating.
+In my code i leave comments and remarks to explain as best to any reader to help understand my motive for which ever code i've written. CRUD is a very common term used in databases, which stands for create, read, update & delete. After several tests all crud functions are working as they should. flask worked well, flask paginate worked very well too. Now, flask paginate is the extension responsible for the pagination on the pages. It's usage was a bit tricky, but once you understand how it works, it becomes very usefull. Another tricky bit is when writing string queries, if there are styles that would work within python file they won't neccessarily work within the JInja templates. I'll be leaving bits of info's within my templates to explain some templating.
 At this point, the app works well on these screens, the iphone6/6+/7/7+/8/8+,Galaxy s5 and desktops. 
 
 
@@ -99,7 +99,7 @@ These are critical neccesities if you are deploying to heroku.
 * Add a recipe by clicking on the big '+' sign.
 * click on the image to have access to ingredients.
 2. Category page > You can add and delete categories
-* Click on a meal type to sort out the number of meals in the database.
+* Click on a meal type to sort out and display the number of items with that category in the database.
 
 
 
