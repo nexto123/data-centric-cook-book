@@ -121,9 +121,9 @@ $ echo web: python app.py > Procfile
 ### Features to be added:
 
 1. user profile page.
-2. limit on crud access> user can only edit and delete what they contributed'
+2. limit on crud access> user can only edit and delete what they contributed.
 3. Extension page to the full recipe details.
-4. Social Media Extensions 
+4. Social Media Extensions .
 
 
 ### Features:
