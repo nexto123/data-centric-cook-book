@@ -131,7 +131,7 @@ $ echo web: python app.py > Procfile
 1. Home page > Log in to activate crud functionality on the cards.
 * Add a recipe by clicking on the big '+' sign.
 * click on the image to have access to ingredients.
-2. Category page > You can add and delete categories
+* Category page > You can add and delete categories
 * Click on a meal type to sort out and display the number of items with that category in the database.
 
 
