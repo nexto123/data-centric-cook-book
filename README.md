@@ -3,7 +3,10 @@
 A Code Institute Project. Data-Centric.
 
 ## Getting Started
-To get started let's make some preps. You'd need to have a basic understanding of the flask framework and at least a grasp on some frontend technologies. Besides the usual CSS and HTML, it would be handy to know a bit of bootstrap or materialise.css. In our case, we will be using materialise.css for the front-end. 
+
+Ingrido is the shortening of ingredients a suitable name i found for my cook-book project. It is simply the showcasing of food recipes that can be easily accessed. First log in and gain full access. 
+
+## UX
 
  Since the Question specified an online cookbook, it's imperative we stay as close as we can within the scope of what has been prescribed, at least in design. For the design, I'm going to be using grids of 3squares per row, with a total of 6 squares per page. The materialise cards can do a good job with that. The cards will have 3 sections; being 1. the card-image, 2. card-title, and 3.crud-section.
  The card-image has 2 sections, the actual image which will bear the recipe image and on the flipped side where I'll put my recipe ingredients. So if a user should click on the image of a card it will flip and the ingredients will be displayed. The card title is where some details like recipe author, country of origin of the recipe, and the name of recipe entries will be placed.  
@@ -13,7 +16,11 @@ To get started let's make some preps. You'd need to have a basic understanding o
  
 ## Prerequisites
 
-I'll usually start by setting up the environment for my flask app by entering in my cli tool
+To get started let's make some preps. You'd need to have a basic understanding of the flask framework and at least a grasp on some frontend technologies. Besides the usual CSS and HTML, it would be handy to know a bit of bootstrap or materialise.css. In our case, we will be using materialise.css for the front-end. 
+
+
+And for the backend I'll usually start by setting up the environment for my flask app by entering in my cli tool
+
 ``` 
 $ [sudo]pip install virtualenv 
 ```
@@ -64,10 +71,16 @@ Voila! Your database is ready.
 ## Testing
 
 Usually, python apps are required to use test automation, and the python unittest libraries can be employed for the job.
-But at this time all test were done manually. This isn't very efficient, but my experience with unittest isn't sufficient at this time and this is a time bound project. 
-In my code, I leave comments and remarks to explain as best to any reader to help understand my motive for whichever code I've written. CRUD is a very common term used in databases, which stands for Create, Read, Update & Delete. After several tests, all crud functions are working as they should. flask worked well, flask paginate worked very well too. Now, flask paginate is the extension responsible for the pagination on the pages. Its usage was a bit tricky, but once you understand how it works, it becomes very useful. Another tricky bit is when writing string queries if there are styles that would work within python file they won't necessarily work within the JInja templates. I'll be leaving bits of info's within my templates to explain some templating.
-At this point, the app works well on these screens, the iphone6/6+/7/7+/8/8+, Galaxy s5 and desktops. 
+But at this time all my test were done manually.
 
+i. The Like button: In the normal sense, a validated user can only like a post once, but since my goal is to demonstrate a basic interaction of the database and not to overstep the scope of the project, user validation wasn't my aim for the like button. I simply developed a counting system to keep track of clicks and save the value to the database. So when the user clicks the favourite button, it would be counted as +1. I also gave all the entries a like value of 1 just as not left bare. I could start them with zero or empty space that wasn't my goal.
+
+ii. Flask-Paginate: The paging function wasn't very efficient as the application grew cumbersome and difficult due to poor documentation of flask-paginate. In the future, I'll employ the use of ``` request. referrer ```
+URL style for my pages, as I've come to under its use better.
+
+iii. The recipe ingredient: The placement wasn't the most ideal, and my plan was to have all the necessary features on the card. Some ingredients could be a lot in terms of wording and would be best if there was an allotted page for every recipe. In the future, I will add a read more button to give an extension to the recipe on a full page.
+
+At this point, the app works well on the various mobile screens, the iphone6/6+/7/7+/8/8+, Galaxy s5 and desktops. 
 
 
 ## Deployment To Git & Heroku
@@ -105,7 +118,15 @@ $ echo web: python app.py > Procfile
 
 #### [Live Version](https://ingrido.herokuapp.com/)
 
-#### Site Map:
+### Features to be added:
+
+1. user profile page.
+2. limit on crud access> user can only delete what they contributed'
+3. Extension page to the full recipe details.
+4. Social Media Extensions 
+
+
+### Features:
 
 1. Home page > Log in to activate crud functionality on the cards.
 * Add a recipe by clicking on the big '+' sign.
