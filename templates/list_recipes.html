@@ -10,10 +10,13 @@
       <h1 class="header center orange-text" style="font-weight: 600;">The Recipe´ Catalogue</h1>
       <div class="row center">
   {% if session.username == session.None %}
-     <h5 class="header col s12 light" style="font-eight: 200; font-size: 100%; color: #fff;"><a href="{{url_for('login_page')}}"><span class="login-text">Log in here</span></a> to gain full access. Participation is free!</h5>
+           <a href="{{url_for('edit_recipe', page=page, recipe_id=recipe._id)}}" class="waves-effect waves-light btn-small blue lighten-2 edit-button" disabled >Edit</a>
+           <a  href="{{url_for('delete_recipe', page=page, recipe_id=recipe._id)}}" class="btn-floating waves-effect waves-light right lighten-2  disabled delete-button"><i class="material-icons delete ">delete</i></a>
+           
     {% else %}
-    <h4 style="font-eight: 200; font-size: 100%; color: #fff;">You can now add, edit and delete your recipies!</h4>
-    {% endif%}
+          <a href="{{url_for('edit_recipe', page=page, recipe_id=recipe._id)}}" class="waves-effect waves-light btn-small  edit-button" style="background-color: #009688;">Edit</a>
+          <a href="{{url_for('delete_recipe', page=page, recipe_id=recipe._id)}}" class="waves-effect waves-light right lighten-2 delete-button"><i class="material-icons delete">delete</i></a>
+      {% endif%}
       </div>
       <div class="row center">
         <a href="{{ url_for("add_recipe") }}" id="download-button" class="waves-effect waves-light"><i class="material-icons add_recipe waves-effect waves-light">add_box</i></a>
