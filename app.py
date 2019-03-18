@@ -162,9 +162,20 @@ def delete_categories(category_id):
 # search route for categories
 @app.route('/list_recipes/<category_name>')
 def list_recipes(category_name):
-    #search by category_name parsed from the string query 
+    
+    #Pagination
+    page = request.args.get(get_page_args, type=int, default=1)
+    page, per_page,offset = get_page_args(page_parameter='page', per_page_parameter='per_page')
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+    # using the skip and limit curser and per_page setted as 10 items perpage      
+    
     recipes = mongo.db.recipes.find({"category_name":category_name})
-    return render_template('list_recipes.html', recipes=recipes)
+    pagination = Pagination( page=page, per_page=per_page,total=recipes.count(), search=search, record_name='recipes',offset=offset)
+    #pagination is parsed into the template to be displayed
+    return render_template('list_recipes.html',recipes=recipes, page=page, pagination=pagination )
         
     
 #login page route
