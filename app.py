@@ -78,6 +78,7 @@ def add_recipe():
 # accepts requests from add recipe page and inserts recipes into db
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
+    category_name= request.form['category_name']
     recipe_author= request.form['recipe_author']
     recipe_name =request.form['recipe_name']
     country_of_origin= request.form['country_of_origin']
@@ -89,7 +90,7 @@ def insert_recipe():
     'recipe_name':recipe_name, 
     'recipe_ingredients':recipe_ingredients,
     'country_of_origin':country_of_origin, 
-    'likes':likes})
+    'likes':likes, 'photo_url':photo_url, 'category_name':category_name})
     return redirect(url_for('home'))
     
     

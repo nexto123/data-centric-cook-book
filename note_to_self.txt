@@ -1,1 +1,5 @@
 i must convert the edit like value into an integer before sending to the database.
+
+*Will create a drop down menu for categories.
+*Will aslo create search input for recipes 
+*Will finally add wtf forms functionality
